@@ -146,4 +146,11 @@ print("D_J = ",D_J)
 
 ## Inverse Velocity
 I_V = np.linalg.inv(JM1)
+I_V = np.dot(I_V,p)
+I_V = np.matrix(I_V)
 print("I_V = ",I_V)
+
+# Force-Torque Analysis
+F_T = np.transpose(JM1)
+print("F_T = ")
+print(F_T)
