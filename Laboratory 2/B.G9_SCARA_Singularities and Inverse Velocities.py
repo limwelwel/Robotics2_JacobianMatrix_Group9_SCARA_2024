@@ -114,6 +114,32 @@ JM2 = np.concatenate((J4,J5,J6),1)
 J = np.concatenate((JM1,JM2),0)
 J = np.matrix(J)
 
+#4. Differential Equations
+xp, yp, zp = sp.symbols('x* y* z*')
+ωx, ωy, ωz = sp.symbols('ωx ωy ωz')
+T1_p, T2_p, D3_p = sp.symbols('ϴ1* ϴ2* D3*')
+
+q = [[T1_p],[T2_p],[D3_p]]
+
+E = np.dot(J,q)
+E = np.array(E)
+print("E = ")
+print(E)
+
+xp = E[0,0]
+yp = E[1,0]
+zp = E[2,0]
+ωx = E[3,0]
+ωy = E[4,0]
+ωz = E[5,0]
+
+print("xp = ",xp)
+print("yp = ",yp)
+print("zp = ",zp)
+print("ωx = ",ωx)
+print("ωy = ",ωy)
+print("ωz = ",ωz)
+
 ## Singularity
 D_J = np.linalg.det(JM1)
 print("D_J = ",D_J)
